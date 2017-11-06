@@ -1,0 +1,476 @@
+{
+	"variables": [],
+	"info": {
+		"name": "BurkaWatch",
+		"_postman_id": "6518ba60-f959-093b-2845-162343e5827a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"url": "http://localhost:8000/api/user/signup",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phonenumber",
+							"value": "1234567890",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:8000/api/user/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phonenumber",
+							"value": "1234567890",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "pincode",
+							"value": "0384",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Image Store",
+			"request": {
+				"url": "http://localhost:8000/api/image/store",
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "5c49eb80ee5c79e6da0b44f4701c6622",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "0a20a561b9afbbd7b0b1f7b409dd282f",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lat",
+							"value": "20",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "lon",
+							"value": "30",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "England1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is burka1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "s3_path",
+							"value": "this is test path",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Request",
+			"request": {
+				"url": "http://localhost:8000/api/image/uploadrequest",
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "5c49eb80ee5c79e6da0b44f4701c6622",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filename",
+							"value": "test.jpeg",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Report",
+			"request": {
+				"url": "http://localhost:8000/api/report",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "0a20a561b9afbbd7b0b1f7b409dd282f",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "image_id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "reason",
+							"value": "this is not burka",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Latest Images",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8000/api/image/latest?page=1&count_per_page=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"image",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "count_per_page",
+							"value": "5",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "5c49eb80ee5c79e6da0b44f4701c6622",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "User's Latest Images",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8000/api/image/get_user_images?page=1&count_per_page=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"image",
+						"get_user_images"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "count_per_page",
+							"value": "5",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "5c49eb80ee5c79e6da0b44f4701c6622",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Info",
+			"request": {
+				"url": "http://localhost:8000/api/user/get",
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "5c49eb80ee5c79e6da0b44f4701c6622",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Nickname",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8000/api/user/update?nickname=niccc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"update"
+					],
+					"query": [
+						{
+							"key": "nickname",
+							"value": "niccc",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "5c49eb80ee5c79e6da0b44f4701c6622",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"value": "",
+							"description": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Image",
+			"request": {
+				"url": "http://localhost:8000/api/image/8",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "2b546662641cbcd83f4ae13f0ceddd53",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Image",
+			"request": {
+				"url": "http://localhost:8000/api/image/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "2b546662641cbcd83f4ae13f0ceddd53",
+						"description": ""
+					},
+					{
+						"key": "description",
+						"value": "this",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "location",
+						"value": "Canada",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "lat",
+						"value": "1",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "lon",
+						"value": "2",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "updated description",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "canada",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "loon",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get LeaderBoard",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8000/api/user/leaderboard?count_per_page=10&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"leaderboard"
+					],
+					"query": [
+						{
+							"key": "count_per_page",
+							"value": "10",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "2b546662641cbcd83f4ae13f0ceddd53",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
